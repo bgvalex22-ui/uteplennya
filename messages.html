@@ -13,6 +13,22 @@
 
   </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const driveUrl = "https://google.com"; 
+    
+    const links = document.querySelectorAll('a[href*="video_files/"]');
+    
+    links.forEach(link => {
+      const filePath = link.getAttribute('href');
+      const fileName = filePath.split('/').pop();
+      
+      link.setAttribute('href', driveUrl);
+      link.setAttribute('target', '_blank'); // Відкривати у новій вкладці
+    });
+  });
+</script>
+
  </head>
 
  <body onload="CheckLocation();">
